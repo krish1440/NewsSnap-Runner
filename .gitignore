@@ -1,0 +1,23 @@
+# Secrets & Environment files
+.env
+*.env
+
+# Ignore Parent Repositories & Application Code
+../frontend/
+../backend/
+frontend/
+backend/
+
+# System & OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Virtual Environments & Caches
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
