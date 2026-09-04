@@ -46,6 +46,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: 'kc1404/NewsSnap'
+          ref: 'main'
           token: ${{ secrets.PRIVATE_REPO_PAT }}
 
       - name: Set up Python 3.11
