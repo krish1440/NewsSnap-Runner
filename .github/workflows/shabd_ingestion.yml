@@ -45,7 +45,7 @@ jobs:
       - name: Checkout Private Backend Code
         uses: actions/checkout@v4
         with:
-          repository: 'kc1404/NewsSnap'
+          repository: 'krish1440/NewsSnap'
           ref: 'main'
           token: ${{ secrets.PRIVATE_REPO_PAT }}
 
