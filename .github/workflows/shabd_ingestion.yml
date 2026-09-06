@@ -90,7 +90,7 @@ jobs:
         run: |
           python -m backend.pipeline
 
-      - name: Run 3-Day Retention Storage Cleanup
+      - name: Run 2-Day Retention Storage Cleanup
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
@@ -99,7 +99,7 @@ jobs:
           CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
           CLOUDINARY_ACCOUNTS: ${{ secrets.CLOUDINARY_ACCOUNTS }}
         run: |
-          python -m backend.cleanup_old_news --days 3
+          python -m backend.cleanup_old_news --days 2
 
       - name: Package News Stories into Zip Archive (0 Cloudinary Bandwidth)
         if: always()
