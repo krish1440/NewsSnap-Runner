@@ -2,8 +2,8 @@ name: Automated PB-SHABD News Ingestion Worker
 
 on:
   schedule:
-    # Run automatically every 3 hours (8 times per day, 100% UNLIMITED FREE on Public Repo)
-    - cron: '0 */3 * * *'
+    # Check automatically every 1 hour (24 times per day, 100% UNLIMITED FREE on Public Repo)
+    - cron: '0 * * * *'
   workflow_dispatch:
     inputs:
       ingestion_limit:
@@ -20,7 +20,7 @@ jobs:
   run-pipeline:
     name: Run News Pipeline
     runs-on: ubuntu-latest
-    timeout-minutes: 120 # Cap at 2 hours max per run
+    timeout-minutes: 180 # Cap at 3 hours max per run
 
     steps:
       - name: Check API Pipeline Status (Prevent Duplicate Runs)
