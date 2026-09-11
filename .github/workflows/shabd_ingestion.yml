@@ -87,6 +87,7 @@ jobs:
           SHABD_PASSWORD: ${{ secrets.SHABD_PASSWORD }}
           FIREBASE_ADMINSDK_JSON: ${{ secrets.FIREBASE_ADMINSDK_JSON }}
           INGESTION_LIMIT: ${{ inputs.ingestion_limit || '200' }}
+          MICRO_BATCH_SIZE: "5"
           PYTHONUNBUFFERED: "1"
         run: |
           python -m backend.pipeline
