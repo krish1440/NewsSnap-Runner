@@ -9,7 +9,7 @@ on:
       ingestion_limit:
         description: 'Number of news stories to process per run'
         required: false
-        default: '100'
+        default: '200'
 
 # Prevent simultaneous parallel runs; sequence runs if previous one is still executing
 concurrency:
@@ -85,7 +85,8 @@ jobs:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           SHABD_EMAIL: ${{ secrets.SHABD_EMAIL }}
           SHABD_PASSWORD: ${{ secrets.SHABD_PASSWORD }}
-          INGESTION_LIMIT: ${{ inputs.ingestion_limit || '100' }}
+          FIREBASE_ADMINSDK_JSON: ${{ secrets.FIREBASE_ADMINSDK_JSON }}
+          INGESTION_LIMIT: ${{ inputs.ingestion_limit || '200' }}
           PYTHONUNBUFFERED: "1"
         run: |
           python -m backend.pipeline
