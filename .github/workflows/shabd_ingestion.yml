@@ -2,8 +2,8 @@ name: Automated PB-SHABD News Ingestion Worker
 
 on:
   schedule:
-    # Check automatically every 1 hour (24 times per day, 100% UNLIMITED FREE on Public Repo)
-    - cron: '0 * * * *'
+    # Run every hour from 6:00 AM IST to 11:00 PM IST (00:30 UTC to 17:30 UTC)
+    - cron: '30 0-17 * * *'
   workflow_dispatch:
     inputs:
       ingestion_limit:
